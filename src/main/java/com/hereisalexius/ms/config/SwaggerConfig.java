@@ -47,7 +47,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
                 "Demo spring boot project",
                 "API 0.0.1",
                 "No terms",
-                new Contact("Olexij Polishchuk", "http://localhost:8080", "hereisalexius@gmail.com"),
+                new Contact("Olexij Polishchuk", "http://localhost:5000", "hereisalexius@gmail.com"),
                 "License of API", "API license URL", Collections.emptyList());
     }
 
