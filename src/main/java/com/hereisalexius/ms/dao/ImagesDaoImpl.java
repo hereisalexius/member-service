@@ -14,20 +14,26 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.UUID;
 
 @Service
 public class ImagesDaoImpl implements ImagesDao {
+
+    public static String DEFAULT_IMAGE = "http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640-300x300.png";
+
     @Autowired
     private GridFsTemplate gridFsTemplate;
 
     @Override
     public String save(String url) throws Exception {
+        if (url == null || url.isEmpty()) url = DEFAULT_IMAGE;
+        InputStream inputStream = new URL(url).openStream();
         String ext = makeExtFromURL(url);
         String contentType = "image/" + ext;
         String fileName = UUID.randomUUID().toString() + "." + ext;
-        InputStream inputStream = new URL(url).openStream();
+
         return gridFsTemplate.store(inputStream, fileName, contentType).toString();
     }
 

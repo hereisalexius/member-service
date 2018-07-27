@@ -36,7 +36,7 @@ import java.util.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MemberServiceApplicationTests {
+public class ControllersTests {
 
     @Autowired
     private WebApplicationContext wac;
