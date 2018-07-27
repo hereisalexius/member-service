@@ -9,3 +9,5 @@ API user
 username : admin
 
 password : password
+
+Made on old PC with very low RAM, love and patience :)
